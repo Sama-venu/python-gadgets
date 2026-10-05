@@ -8,6 +8,7 @@ FROM python:3.12-slim
 WORKDIR /myapp
 RUN useradd appuser
 COPY app.py .
+COPY . .
 COPY --from=build /install /usr/local
 USER appuser
 CMD ["python", "app.py"]
